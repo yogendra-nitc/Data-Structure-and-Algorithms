@@ -1,0 +1,14 @@
+#include<iostream>
+#define ll long long 
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        ll u,v;
+        cin>>u>>v;
+        cout<<((u+1)+((u+v)*(u+v+1))/2)<<endl;
+    }
+}
