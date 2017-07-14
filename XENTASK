@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int T;
+	cin>>T;
+	for(int test_index=0; test_index<T; test_index++)
+	{
+		int N;
+		cin>>N;
+		int X[N],Y[N];
+		for(int i=0; i<N; i++)
+		{
+			cin>> X[i];
+		}
+		for(int i=0; i<N; i++)
+		{
+			cin>> Y[i];
+		}
+		long int sum1=0, sum2=0;
+		for(int i=0; i<N; i++)
+		{
+			sum1=sum1+X[i];
+			i=i+1;
+			if(i<N)
+			sum1= sum1+Y[i];
+		}
+		for(int i=0; i<N; i++)
+		{
+			sum2=sum2+Y[i];
+			i=i+1;
+			if(i<N)
+			sum2= sum2+X[i];
+		}	
+		if(sum1<sum2)
+		cout<<sum1<<endl;
+		else
+		cout<<sum2<<endl;	
+	}
+}
+			
