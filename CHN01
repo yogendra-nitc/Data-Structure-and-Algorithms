@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int e,m,h,cnt=0,contest=0;
+	    cin>>e>>m>>h;
+	    while((e>2 && m>2 && h >=0) || (e>2 && m>1 && h >0) || (e>1 && m>2 && h>0))
+	    {
+	        if(h==0)
+	        {
+	            e= e-3; m= m-3; cnt=cnt+2;
+	        }
+	        else if(e>m)
+	        {
+	            e=e-3; m=m-2; h--;
+	            cnt = cnt+2;
+	        }
+	        else{
+	            e=e-2; m=m-3; h--;
+	            cnt = cnt+2;
+	        }
+	    }
+	    if((e>1 && m>0) || (e>0 && m>1) || (e>0 && m>0 && h>0))
+	    cnt++;
+	    cout<<cnt<<endl;
+	}
+	return 0;
+}
