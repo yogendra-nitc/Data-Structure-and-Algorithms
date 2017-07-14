@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    int i=n;
+	    int res=250;
+	    for(int i=0; i<n; i++)
+	    {
+	        cout<<res++<<" ";
+	    }
+	    cout<<endl;
+	}
+	return 0;
+}
