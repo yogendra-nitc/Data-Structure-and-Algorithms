@@ -1,0 +1,75 @@
+						
+							
+						/*  
+						 *  Yogendra 
+						 *  National Institute of Technology, Calicut
+						 *  Enrolled in - Master of Computer Application course
+						 *  codechef- steptostep93  * Hackerrank- codigo16
+						 *  codeforce- yogendra-nitc * Hacerearth- codigo16
+						 *  email-id - steptostep93@gmail.com
+						 */
+
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long int lli;
+
+#define pb push_back
+#define mp make_pair
+#define mod 1000000007
+#define ft first
+#define sd second
+#define UB upper_bound
+#define LB lower_bound
+
+#define OPT ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define tc() int t; cin>>t; while(t--)
+#define CI(a) cin>>a
+#define CO(a) cout<<(a)<<endl
+#define all(x) x.begin(),x.end()
+#define ab(x) ((x)>0?(x):(-x))
+
+#define sfi(x) scanf("%d",&x)
+#define sfli(x) scanf("%ld",&x)
+#define sflli(x) scanf("%lld",&x)
+
+#define loopi(i,a,b) for(int i=(a); i<(b); i++)
+#define loopl(i,a,b) for(lli i=(a); i<(b); i++)
+#define mset set<int>myset;
+#define itr set<int>::iterator it;
+
+typedef pair<lli ,lli>PR;
+typedef vector<int>VR;
+typedef vector<PR>VRll;
+
+
+void solution()
+{
+		lli A,B,N,res;
+	    cin>>A>>B>>N;
+	    if(N%6 == 1)
+	       res = A%mod;
+	    else if(N%6 == 2)
+	      res = B%mod;
+	    else if(N%6 == 3)
+	      res = (B-A)%mod;
+	    else if(N%6 == 4)
+	      res = (-A)%mod;
+	    else if(N%6 == 5)
+	      res = (-B)%mod;
+	    else if(N%6 == 0)
+	      res = (A-B)%mod;
+	      if(res<0)
+	        res = res + mod;
+	      CO(res%mod);
+}
+
+
+signed main()
+{
+	OPT
+	tc()
+	{
+		solution();
+	}
+	return 0;
+}
