@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int N,K;
+	    cin>>N>>K;
+	    int a_set[N][2500+1]={0};
+	    
+	    for(int i=0; i<N; i++)
+	    {
+	       cin>>a_set[i][0];
+	       for(int j=0; j<a_set[i][0]; j++)
+	        {
+	            int x;
+	            cin>>x;
+	            a_set[i][x] = 1;
+	        } 
+	    }
+	    int cnt=0;
+	    for(int i=0; i<N-1; i++)
+	    {
+	        for(int j=i+1; j<N; j++)
+	        {
+	            int k,flag=0;
+	            for(k=1; k<=K; k++)
+	            {
+	                if(a_set[i][k] == 0 && a_set[j][k]==0 )
+	                {
+	                    flag=1;
+	                    break;
+	                }
+	            }
+	            if(flag==0)
+	            cnt++;
+	        }
+	    }
+	    cout<<cnt<<endl;
+	    
+	}
+	return 0;
+}
