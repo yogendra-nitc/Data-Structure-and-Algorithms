@@ -1,0 +1,111 @@
+						
+							
+						/*  
+						 *  Yogendra 
+						 *  National Institute of Technology, Calicut
+						 *  Enrolled in - Master of Computer Application course
+						 *  codechef- steptostep93  * Hackerrank- codigo16
+						 *  codeforces- yogendra-nitc * Hackerearth- codigo16
+						 *  email-id - steptostep93@gmail.com
+						 */
+
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long int lli;
+
+#define pb push_back
+#define mp make_pair
+#define mod 1000000007
+#define ft first
+#define sd second
+#define UB upper_bound
+#define LB lower_bound
+
+#define OPT ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define tc() int t; cin>>t; while(t--)
+//#define CI(a) cin>>a
+#define CO(a) cout<<(a)<<endl
+#define all(x) x.begin(),x.end()
+#define ab(x) ((x)>0?(x):(-x))
+
+#define sfi(x) scanf("%d",&x)
+#define sfli(x) scanf("%ld",&x)
+#define sflli(x) scanf("%lld",&x)
+
+#define loopi(i,a,b) for(int i=(a); i<(b); i++)
+#define loopl(i,a,b) for(lli i=(a); i<(b); i++)
+#define mset set<int>myset;
+#define itr set<int>::iterator it;
+
+typedef pair<lli ,lli>PR;
+typedef vector<int>VR;
+typedef vector<PR>VRll;
+#include<string>
+
+void solution()
+{
+	
+	string str;
+	getline( cin,str);
+	int cnt=1;
+	string fname, mname, lname;
+	for(int i=0; i<str.length(); i++)
+	{
+	    str[i]=tolower(str[i]);
+	}
+	
+	for(int i=0; i<str.length(); i++)
+	{
+	    if(str[i]==32)
+	        {
+	            cnt++;
+	            i++;
+	        }
+	    if(cnt==1)
+	    {
+	      fname = fname + str[i];  
+	    }
+	    else if(cnt==2)
+	    {
+	        mname = mname + str[i];
+	    }
+	    else if(cnt == 3)
+	    {
+	        lname = lname + str[i];
+	    }
+	}
+	if(cnt==3)
+	{
+	    fname[0] = toupper(fname[0]);
+	    mname[0] = toupper(mname[0]);
+	    lname[0] = toupper(lname[0]);
+	    cout<<fname[0]<<"."<<" "<<mname[0]<<"."<<" "<<lname<<endl;
+	}
+	else if(cnt==2)
+	{
+	    fname[0] = toupper(fname[0]);
+	    mname[0] = toupper(mname[0]);
+	    cout<<fname[0]<<"."<<" "<<mname<<endl;
+	}
+	else
+	if(cnt==1)
+	{
+	    fname[0] = toupper(fname[0]);
+	    cout<<fname<<endl;
+	}
+}
+
+
+int main()
+{
+	OPT
+	int t;
+	cin>>t;
+    cin.ignore();
+    while(t--)
+	{
+
+		solution();
+	}
+	return 0;
+}
