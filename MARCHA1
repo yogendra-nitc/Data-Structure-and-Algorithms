@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+void printPowerSet(int *set, int set_size, int m)
+{
+    int sum;
+    long long pow_set_size = pow(2, set_size);
+    long long counter, j;
+    long long arr[pow_set_size];
+    for(counter = 1; counter < pow_set_size; counter++)
+    {
+      sum=0;
+      for(j = 0; j < set_size; j++)
+       {
+          if(counter & (1<<j))
+           {
+               sum = sum+set[j];
+           }
+       }
+         arr[counter] = sum;
+    }
+    multiset<long long>A(arr, arr+pow_set_size );
+    multiset<long long>::iterator it;
+    it = find(A.begin(),A.end(),m);
+    if(*it == m)
+    cout<<"Yes"<<endl;
+    else
+    cout<<"No"<<endl;
+    
+}
+ 
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+        int n,m;
+        cin>>n>>m;
+        int arr[n];
+        for(int i=0; i<n; i++)
+        {
+            cin>>arr[i];
+        }
+        printPowerSet(arr, n,m);
+    }
+    
+    return 0;
+}
