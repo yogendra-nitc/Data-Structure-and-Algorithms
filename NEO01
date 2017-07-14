@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	  ll N,psum=0,cnt=0,sum=0;
+	  cin>>N;
+	  ll arr[N],ind=0;
+	  for(ll i=0; i<N; i++)
+	  {
+	      ll x; 
+	      cin>>x;
+	      if(x>=0)
+	      {
+	          psum=psum+x;
+	          cnt++;
+	      }
+	      else
+	      {
+	          arr[ind] = x;
+	          ind++;
+	      }
+	  }
+	      sort(arr,arr+N-cnt);
+	      ll nsum=0;
+	      int j=N-cnt-1;
+	     // int p=cnt;
+	      while(j>=0)
+	      {
+	          if((nsum + psum)*cnt >= (arr[j] + nsum + psum)*(cnt+1))
+	            break;
+	          nsum = nsum + arr[j];
+	          cnt++;
+	          j--;
+	      }
+	      sum = (nsum + psum)*cnt;
+	      while(j>=0)
+	      {
+	          sum = sum + arr[j];
+	          j--;
+	      }
+	      cout<<sum<<endl;
+	  }
+	return 0;
+}
