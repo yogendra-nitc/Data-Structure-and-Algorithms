@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int T;
+	cin>>T;
+	while(T--)
+	{
+		int n,m;
+		cin>>n>>m;
+		int t;
+		t=n-2*m;
+		int x,y;
+		for(int i=0; i<m; i++)
+		{
+		    cin>>x>>y;
+		}
+		if(t%2==0)
+		cout<<"yes"<<endl;
+		else
+		cout<<"no"<<endl;
+	}
+}
