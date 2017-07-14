@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t; 
+    cin>>t;
+    while(t--)
+    {
+    string club[4];
+    int score[4];
+    for(int i=0; i<4; i++)
+    {
+        cin>>club[i]>>score[i];
+    }
+    int s1,s2,s3,s4;
+    for(int i=0; i<4; i++)
+    {
+        if(club[i] == "Barcelona")
+        s1=score[i];
+        else if(club[i]=="Eibar")
+        s2=score[i];
+        else if(club[i] =="RealMadrid")
+        s3=score[i];
+        else
+        s4=score[i];
+    }
+    if(s3 < s4 && s1 > s2)
+    cout<<"Barcelona"<<endl;
+    else
+    cout<<"RealMadrid"<<endl;
+    }
+}
+
+/*
+2
+Barcelona 2
+Malaga 1
+RealMadrid 1
+Eibar 0
+
+
+Malaga 3
+RealMadrid 2
+Barcelona 8
+Eibar 6
+*/
